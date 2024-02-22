@@ -35,15 +35,14 @@ const Index = () => {
       return;
     }
 
-    const primes = [2];
+    const exponents = [2];
     for (let p = 3; p <= maxExponent; p += 2) {
-      const number = Math.pow(2, p) - 1;
-      if (isPrime(number)) {
-        primes.push(number);
+      if (isPrime(Math.pow(2, p) - 1)) {
+        exponents.push(p);
       }
     }
 
-    setPrimeNumbers(primes);
+    setPrimeNumbers(exponents);
   };
 
   return (
@@ -59,7 +58,7 @@ const Index = () => {
       </VStack>
       <Box mt={10}>
         <Text fontSize="lg" mb={2}>
-          Mersenne Primes (2^p - 1):
+          Exponents of Mersenne Primes (2^p - 1):
         </Text>
         <List spacing={3}>
           {primeNumbers.map((prime, index) => (

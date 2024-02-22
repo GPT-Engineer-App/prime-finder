@@ -35,9 +35,9 @@ const Index = () => {
       return;
     }
 
-    const exponents = [2];
-    for (let p = 3; p <= maxExponent; p += 2) {
-      if (isPrime(Math.pow(2, p) - 1)) {
+    const exponents = [];
+    for (let p = 2; p <= maxExponent; p++) {
+      if (isPrime(p)) {
         exponents.push(p);
       }
     }
